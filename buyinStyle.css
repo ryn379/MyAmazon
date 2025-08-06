@@ -169,4 +169,7 @@ body{
   background-color: #f7ca00;
   transform: translateY(-1px);
 }
+select{
+    margin-bottom: 0.5vw;
+}
 
