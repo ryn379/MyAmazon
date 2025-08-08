@@ -203,7 +203,7 @@ select{
     width: 3vw;
 }   
 #items img{
-    transition: all 0.2s ease-in-out;
+    transition: all 0.8s ease-in-out;
 }
 .items img:hover{
     transform: scale(1.2);
