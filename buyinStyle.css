@@ -122,6 +122,14 @@ header {
 .item img{
     width: 15vw;
     height: 15vw;
+    transition: all 0.5s ease-in-out;
+}
+.item img:hover{
+    transform: scale(1.3);
+    border: 1px solid black;
+    box-shadow: 2px 2px black;
+    border-radius: 10px;
+    background-color: white;
 }
 .item {
     padding: 2.5vw;
@@ -202,21 +210,12 @@ select{
     height: 5vh;
     width: 3vw;
 }   
-#items img{
-    transition: all 0.8s ease-in-out;
-}
-.items img:hover{
-    transform: scale(1.2);
-    border: 2px solid black;
-    border-radius: 10px;
-    box-shadow: 2px solid black;
-    cursor: pointer;
-}
+
 .fly-img{
     position: fixed;
     z-index: 9999;
     pointer-events: none;
-    transition: all 0.8s ease;
-    height: 5vw;
+    transition: all 0.8s ease-in-out;
+    height: 7vw;
     width: 20vw;
 }
