@@ -4,6 +4,13 @@
 }
 body{
     background: linear-gradient(to bottom, rgb(253, 219, 219), transparent);
+    font-family: 'Oswald', sans-serif;
+}
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: rgb(19,25,33); 
 }
 #navbar{
     display:flex;
@@ -12,6 +19,8 @@ body{
 .list{
     display:flex;
     gap:4rem;
+    justify-content: center;
+    align-items: flex-start;
 }
 #logo{
     width:10rem;
@@ -21,9 +30,13 @@ body{
     margin-top: 0.5rem;
 }
 .list li{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
     list-style: none;
     margin-top:1.5rem;
     color:white;
+    gap: 2rem;
 }
 #input{
     height:2rem;
@@ -43,6 +56,7 @@ body{
     height:2.5rem;
 }
 #nav2 ul{
+    height: 100%;
     margin-left:12rem;
     display:flex;
     gap:4rem;
@@ -54,6 +68,7 @@ body{
     color:white;
     text-decoration: none;
 }
+
 #banner{
     height: auto;
     width: 100%;
@@ -136,6 +151,7 @@ body{
     align-items: center;
     gap: 1vw;
     display: none;
+    margin: 1.5vw;
 }
 .addtocart img{
     width: 1vw;
@@ -172,4 +188,34 @@ body{
 select{
     margin-bottom: 0.5vw;
 }
-
+#cartNo{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+}
+#cartNo p{
+    color: white;
+}
+#cartNo img{
+    height: 5vh;
+    width: 3vw;
+}   
+#items img{
+    transition: all 0.2s ease-in-out;
+}
+.items img:hover{
+    transform: scale(1.2);
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px solid black;
+    cursor: pointer;
+}
+.fly-img{
+    position: fixed;
+    z-index: 9999;
+    pointer-events: none;
+    transition: all 0.8s ease;
+    height: 5vw;
+    width: 20vw;
+}

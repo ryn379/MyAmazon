@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="buyinStyle.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Tint&family=Comic+Relief:wght@400;700&family=Condiment&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Delius+Swash+Caps&family=Fascinate+Inline&family=Griffy&family=Oswald:wght@200..700&family=Roboto:ital,wght@0,100..900;1,100..900&family=Rouge+Script&family=Rubik+Moonrocks&family=Yrsa:ital,wght@0,300..700;1,300..700&display=swap" rel="stylesheet">
 </head>
+<body>
     <header>
     <nav id="navbar">
         <img id="logo" src="images/logo.png" alt="">
@@ -16,9 +20,14 @@
         <img id="search" src="images/search.jpeg" alt="">
         <ul class="list">
             <li>EN</li>
-            <li>Accounts</li>
-            <li>Orders</li>
-            <li>Cart</li>
+            <li>Returns and Orders</li>
+            <li>
+                <p>Cart</p>
+                <div id="cartNo">
+                    <p id="cartp">0</p>
+                <img src="images/cart-icon.png" alt="">
+            </div>
+        </li>
         </ul>
     </nav>
     <nav id="nav2">
@@ -36,7 +45,6 @@
         </ul>
     </nav>
 </header>
-<body>
     <div id="banner">
         <img src="images/dexterbanner.jpg" alt="">
     </div>
@@ -44,6 +52,7 @@
         <div class="items" id="items1"></div>
         <div class="items" id="items2"></div>
     </div>
+    <script src="cart.js"></script>
     <script src="amazon.js"></script>
 </body>
 </html>
