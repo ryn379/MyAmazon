@@ -1,4 +1,4 @@
-import {cart} from './cart.js'
+import {addToCart, cart} from './cart.js'
 import {products} from './products.js'
 
 let productsHTML1="";
@@ -31,7 +31,7 @@ for(let i=0;i<5;i++){
                         <img src="images/amazon-mobile-logo-white.png" alt="">
                         <p>Added</p>
                     </div>
-                    <button class="addbtn" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
+                    <button class="addbtn" data-id-name="${product.id}" data-price-name="${product.price}" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
                 </div>
             `
 }
@@ -63,48 +63,21 @@ for(let i=5;i<products.length;i++){
                         <img src="images/amazon-mobile-logo-white.png" alt="">
                         <p>Added</p>
                     </div>
-                    <button class="addbtn" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
+                    <button class="addbtn"data-id-name="${product.id}" data-price-name="${product.price}" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
                 </div>
             `
 }
 
  document.querySelector('#items1').innerHTML=productsHTML1;
  document.querySelector('#items2').innerHTML=productsHTML2;
-document.querySelectorAll('.addbtn').forEach((btn,index)=>{
-    btn.addEventListener('click',()=>{
-        const parent=btn.closest('.item');
-        const product=products[index];
-        if(!product.flag){
-            parent.querySelector('.addtocart').style.display="flex";
-            cart.l.push({
-                name:btn.dataset.productName,
-                qty:parent.querySelector('.sel').value
-            });
-            cart.cartcnt+=parseInt(parent.querySelector('.sel').value);
-            product.flag=true;
-            parent.querySelector('.addbtn').innerText="Remove";
-            document.querySelector('#cartp').innerText=cart.cartcnt;
-        }
-        else{
-            parent.querySelector('.addtocart').style.display="none";
-            let item;
-            cart.l.forEach((i)=>{
-                if(i.name===product.name){
-                    item=i;
-                }
-            });
-            if(item){
-                cart.cartcnt-=parseInt(item.qty);
-            }
-            cart.l=cart.l.filter(item=>item.name!=product.name);
-            product.flag=false;
-            document.querySelector('#cartp').innerText=cart.cartcnt;
-            parent.querySelector('.addbtn').innerText="Add to Cart";
-        }
+
+document.querySelectorAll('.addbtn').forEach((button,index) => {
+    button.addEventListener('click',()=>{
+        addToCart(button,index);
     });
 });
-const Fcart = document.getElementById('cartNo');
 
+const Fcart = document.getElementById('cartNo');
 document.querySelectorAll('.addbtn').forEach(button => {
     button.addEventListener('click', e => {
         const imgSrc = button.getAttribute('data-image-name');

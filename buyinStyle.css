@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: linear-gradient(to bottom, rgb(253, 219, 219), transparent);
     font-family: 'Oswald', sans-serif;
@@ -210,7 +213,9 @@ select{
     height: 5vh;
     width: 3vw;
 }   
-
+#cartNo:hover{
+    border: 2px solid black;
+}
 .fly-img{
     position: fixed;
     z-index: 9999;
