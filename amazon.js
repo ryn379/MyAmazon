@@ -1,5 +1,7 @@
 import {addToCart, cart} from './cart.js'
 import {products} from './products.js'
+import { updateCartButtons } from './cart.js';
+
 
 let productsHTML1="";
 let productsHTML2="";
@@ -31,7 +33,7 @@ for(let i=0;i<5;i++){
                         <img src="images/amazon-mobile-logo-white.png" alt="">
                         <p>Added</p>
                     </div>
-                    <button class="addbtn" data-id-name="${product.id}" data-price-name="${product.price}" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
+                    <button id="item${product.id}" class="addbtn" data-id-name="${product.id}" data-price-name="${product.price}" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
                 </div>
             `
 }
@@ -63,7 +65,7 @@ for(let i=5;i<products.length;i++){
                         <img src="images/amazon-mobile-logo-white.png" alt="">
                         <p>Added</p>
                     </div>
-                    <button class="addbtn"data-id-name="${product.id}" data-price-name="${product.price}" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
+                    <button id="item${product.id}" class="addbtn" data-id-name="${product.id}" data-price-name="${product.price}" data-image-name="${product.image}" data-product-name="${product.name}">Add to Cart</button>
                 </div>
             `
 }
@@ -102,3 +104,4 @@ document.querySelectorAll('.addbtn').forEach(button => {
         }, 800);
     });
 });
+updateCartButtons();

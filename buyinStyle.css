@@ -224,3 +224,6 @@ select{
     height: 7vw;
     width: 20vw;
 }
+#remove{
+    display: none;
+}

@@ -1,12 +1,27 @@
 import {products} from './products.js'
 
-let stored = JSON.parse(localStorage.getItem('cart'));
-if(!stored){
-    stored={cartcnt:0,
+export let cart = JSON.parse(localStorage.getItem('cart'));
+if(!cart){
+    cart={cartcnt:0,
         l:[]
     }
 }
-export let cart = stored;
+else {
+    cart.cartcnt = cart.l.reduce((sum, item) => sum + parseInt(item.quantity), 0);
+}
+
+export function updateCartButtons() {
+    document.querySelector('#cartp').innerText = cart.cartcnt;
+    cart.l.forEach(item => {
+        const btn = document.querySelector(`#item${item.id}`);
+        if(btn){
+            btn.innerText = "Remove";
+            const product = products.find(p => p.id == item.id);
+            if(product) product.flag = true;
+            btn.closest('.item').querySelector('.addtocart').style.display = "flex";
+        }
+    });
+}
 
 export function addToCart(btn,index){
         const parent=btn.closest('.item');
@@ -21,27 +36,19 @@ export function addToCart(btn,index){
                 id:btn.dataset.idName
             });
             localStorage.setItem('cart',JSON.stringify(cart));
-            cart.cartcnt+=parseInt(parent.querySelector('.sel').value);
+            cart.cartcnt = cart.l.reduce((sum, item) => sum + parseInt(item.quantity), 0);
             product.flag=true;
             parent.querySelector('.addbtn').innerText="Remove";
             document.querySelector('#cartp').innerText=cart.cartcnt;
         }
         else{
-            parent.querySelector('.addtocart').style.display="none";
-            let item;
-            cart.l.forEach((i)=>{
-                if(i.name===product.name){
-                    item=i;
-                }
-            });
-            if(item){
-                cart.cartcnt-=parseInt(item.quantity);
-                localStorage.setItem('cart', JSON.stringify(cart));
-            }
-            cart.l=cart.l.filter(item=>item.name!=product.name);
-            product.flag=false;
-            document.querySelector('#cartp').innerText=cart.cartcnt;
-            parent.querySelector('.addbtn').innerText="Add to Cart";
+            parent.querySelector('.addtocart').style.display = "none";
+            cart.l = cart.l.filter(i => i.id != product.id); 
+            product.flag = false;
+            btn.innerText = "Add to Cart";
+            cart.cartcnt = cart.l.reduce((sum, item) => sum + parseInt(item.quantity), 0);
+            document.querySelector('#cartp').innerText = cart.cartcnt;
+            localStorage.setItem('cart', JSON.stringify(cart));
         }
     }
     console.log(cart.l);

@@ -30,6 +30,23 @@ body{
     font-size: 3vw;
     font-family: "Oswald", sans-serif;
 }
+.logo button{
+    background-color: #ffd814; 
+    border: 1px solid #fcd200;
+    border-radius: 5px;
+    padding: 0.3vw;
+    font-size: 0.8vw;
+    margin: 0.2vw;
+    font-weight: 700;
+    color: #0f1111;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(15,17,17,0.15);
+    transition: all 0.2s ease-in-out;
+}
+.logo a{
+    text-decoration: none;
+    color: #0f1111;
+}
 #container{
     width: 100vw;
     height: 100vh;

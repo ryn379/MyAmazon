@@ -1,5 +1,9 @@
-import {cart} from './cart.js';
+import {cart as Cart} from './cart.js';
 
+let cart=JSON.parse(localStorage.getItem('cart'));
+if(!cart){
+    cart=Cart;
+}
 load();
 function load() {
     const listContainer = document.querySelector('#item-list');
@@ -16,7 +20,7 @@ function load() {
                 <div class="order">
                     <div class="item-summary">
                         <h2>${item.name}</h2>
-                        <p class="price">$${item.price}</p>
+                        <p class="price">$${item.price/100}</p>
                         <p class="quantity">Quantity: ${item.quantity}</p>
                         <button class="update-btn" data-id="${item.id}">Update</button>
                         <button class="delete-btn" data-id="${item.id}">Delete</button>
@@ -37,6 +41,7 @@ function load() {
     const container = document.querySelector('#container');
     container.querySelector('#summary')?.remove();
     let sum = cart.l.reduce((acc, item) => acc + item.price * item.quantity, 0);
+    sum=sum/100;
     const summ = document.createElement('div');
     summ.id = 'summary';
     summ.innerHTML = `
