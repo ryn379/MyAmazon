@@ -128,13 +128,13 @@ body{
     justify-content: flex-start;
     align-items: flex-start;
     flex-direction: column;
+    gap: 2vw;
 }
 h3{
     margin-bottom:2vw ;
     font-size: 1.2vw;
 }
 .delivery-option input{
-    margin-right: 0.5vw;
     cursor: pointer;
 }
 .delivery-option p{
@@ -146,6 +146,22 @@ h3{
     justify-content: center;
     align-items: center;
     gap: 2%;
+    flex-direction: column;
+}
+.delivery-div label{
+    color: rgb(0, 118, 0);
+    font-size: 1.2vw;
+}
+.delivery-inputs{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15vw;
+    flex-direction: row;
+    gap: 1vw;
+}
+.delivery-div h4{
+    margin-bottom:2vw ;
 }
 .delivery-div p, .delivery-div h3{
     white-space: nowrap;
