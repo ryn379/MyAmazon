@@ -238,6 +238,7 @@ h3{
         width: 50vw;
         height: 40vh;
         flex-direction: column;
+        padding-bottom: 20vh;
         margin-bottom:7vw ;
     }
     .headingItem p{
