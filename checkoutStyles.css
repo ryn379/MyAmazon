@@ -203,3 +203,70 @@ h3{
   background-color: #f7ca00;
   transform: translateY(-1px);
 }
+@media (max-width:1024px){
+    .logo{
+        height: 10vh;
+        gap: 20%;
+    }
+    .logo img{
+        height: 7vh;
+        width: 20vw;
+    }
+    .logo h1{
+        font-size: 5vw;
+    }
+    .logo a{
+        margin-right: 5vw;
+        width: 15vw;
+        font-size: 3vw;
+    }
+    #summary{
+        width: 30vw;
+    }
+    #summary h3,#summary h2{
+        font-size: 4vw;
+    }
+    #summary p{
+        font-size: 3vw;
+    }
+    #summary button{
+        width: 17vw;
+        height: 4vh;
+        font-size: 2.5vw;
+    }
+    .item{
+        width: 50vw;
+        height: auto;
+        flex-direction: column;
+        padding-bottom: 15vw;
+        margin-bottom:7vw ;
+    }
+    .headingItem p{
+        font-size: 4vw;
+        margin-bottom: 5vw;
+    }
+    .headingItem img{
+        width: 16vw;
+        height: 6vh;
+    }
+    .item-summary h2{
+        font-size: 4vw;
+    }
+    .item-summary p{
+        font-size: 3.5vw;
+    }
+    .item-summary button{
+        width: 15vw;
+        margin-top: 2vw;
+        font-size: 3.5vw;
+    }
+    .delivery-div h4{
+        font-size: 3.5vw;
+    }
+    .delivery-option label{
+        font-size: 2.5vw;
+    }
+    .order{
+        gap: 0%;
+    }
+}
