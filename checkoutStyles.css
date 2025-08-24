@@ -236,9 +236,8 @@ h3{
     }
     .item{
         width: 50vw;
-        height: auto;
+        height: 40vh;
         flex-direction: column;
-        padding-bottom: 15vw;
         margin-bottom:7vw ;
     }
     .headingItem p{
